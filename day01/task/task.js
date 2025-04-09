@@ -1,0 +1,1 @@
+document.getElementById("box1").innerText = "I am from a separate JavaScript file."

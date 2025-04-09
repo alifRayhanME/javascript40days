@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Loading Method</title>
+    <!-- <script src="app.js"></script> -->
+    <!--  * When we import a JavaScript file in the HTML head tag, the browser loads and executes the JavaScript before the HTML body is fully loaded.
+    * Therefore, the script cannot interact with body elements, and the browser console shows an error: Uncaught TypeError: Cannot set properties of null -->
+
+    <!-- <script async src="app.js"></script> -->
+    <!-- * The script is downloaded in parallel, improving page load speed, but executes before HTML is fully loaded.
+    * Async scripts may not execute in the order they appear, causing potential issues with multiple scripts. -->
+
+
+    <script defer src="app.js"></script>
+    <!-- * The script is downloaded in parallel with HTML parsing, but executed only after the HTML is fully parsed.
+    * Defer ensures scripts run in order and allows interaction with DOM elements. -->
+  </head>
+  <body>
+    <h1>welcome to javascript learning</h1>
+    <div id="box1"></div>
+    <!-- <script>
+      document.getElementById("box1").innerText = "i am from javascript in html script tag";
+    </script> -->
+    <!-- * This works, but it's good practice to separate HTML and JavaScript.
+    * HTML handles structure, JavaScript handles dynamic behavior.
+    * Keeping JavaScript in its own file makes the code reusable and easier to manage. -->
+
+    <!-- <script src="app.js"></script> -->
+    <!-- *This works, but the script is loaded and executed only after the entire HTML file has been loaded. -->
+  </body>
+</html>
